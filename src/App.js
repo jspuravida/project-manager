@@ -3,6 +3,7 @@ import uuid from 'uuid';
 import $ from 'jquery';
 import Projects from './Components/Projects';
 import AddProject from './Components/AddProject';
+import Todos from './Components/Todos';
 import './App.css';
 
 class App extends Component {
@@ -87,6 +88,9 @@ getProjects(){
       <div className="App">
         <AddProject addProject={this.handleAddProject.bind(this)} />
         <Projects projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)} />
+        <hr />
+        <Todos todos={this.state.todos} />
+        {/*This shows how you can bring in data from an API and bring it into our state,then publish it down to components through properties. I used a GET request for this, but I could also use a POST request to submit data to an API/external databases and so on. */}
       </div>
     );
   }
